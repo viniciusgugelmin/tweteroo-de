@@ -24,7 +24,7 @@ app.get("/tweets/:username?", (req, res) => {
   const { username } = req.params;
 
   let tweetsToSend = [
-    ...tweets.map((tweet) => ({
+    ...tweets.reverse().map((tweet) => ({
       username: tweet.username,
       tweet: tweet.tweet,
       avatar: users.find((user) => user.username === tweet.username).avatar,
